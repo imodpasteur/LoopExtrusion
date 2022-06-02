@@ -1,5 +1,5 @@
 # LoopExtrusion
-A tool to simulate loop extrusion in chromatin
+A tool to simulate chromatin loop extrusion with LAMMPS
 
 This repository contains four directories, covering the following cases:
  - **No_extrusion** used to model the dynamics of a polymer without loop extrusion.
