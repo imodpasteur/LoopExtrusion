@@ -1,0 +1,11 @@
+bond_style harmonic
+bond_coeff 1 30.00 1.00
+bond_coeff 2 30.00 1.00
+bond_coeff 3 30.00 1.00
+
+pair_style lj/cut 3.45
+pair_coeff * *  0.0 1.00 4.5
+
+
+angle_style  harmonic
+angle_coeff * 0.1 180
