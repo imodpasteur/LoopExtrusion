@@ -40,7 +40,7 @@ Only 19 samples are provided here. Please, contact us for larger dataset.
 
 ## Anchor-anchor analysis
 
-The directory **Anchor-anchor_analysis** contains a python script for estimating the proportion of Closed, Extrusion and Free states from simulations of localisations of 2 anchors surrounding a loop in microscopy images.
+The directory **Anchor-anchor_analysis** contains a python script for estimating the proportion of Closed, Extrusion and Free states from simulations of localisations of 2 anchors encompassing a loop in microscopy images.
 
 From the simulated anchor coordinates given in **simulated_data_subsample** directory, the script first computes the difference distribution of the two anchors. Assuming Normal distributions for Closed and Free states, the script then estimates the standard deviations for these 2 states ( $\sigma_{closed}$ and $\sigma_{free}$ ). None parameter is estimated for Extrusion state since it can be modeled as an integral of Normal distribution with standard deviation varying from $\sigma_{closed}$ to $\sigma_{free}$. We end up with a 3-state model.
 
