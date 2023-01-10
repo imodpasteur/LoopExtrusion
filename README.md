@@ -1,11 +1,11 @@
 # LoopExtrusion
 
-A tool to simulate chromatin loop extrusion with LAMMPS and estimate loop state proportions from simulations (closed vs extrusion vs open)
+A tool to simulate chromatin loop extrusion with LAMMPS and estimate loop state proportions from simulations (closed vs extruding vs open)
 
 This repository contains three directories:
  - **simulations** used to simulate a polymer with or without loop extrusion.
  - **simulated_data_subsample** contains a few polymer simulations with and without loop extrusion.
- - **Anchor-anchor_analysis** used to analyze simulated loop anchor coordinates to estimate loop state proportions (closed vs extrusion vs open) from simulated static imaging.
+ - **Anchor-anchor_analysis** used to analyze simulated loop anchor coordinates to estimate loop state proportions (closed vs extruding vs open) from simulated static imaging.
 
 
 ## Simulations
