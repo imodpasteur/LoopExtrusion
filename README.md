@@ -35,6 +35,7 @@ The resulting .dcd files containing beads coordinates were then imported in Pyth
 ## Simulated data
 
 The directory **simulated_data_subsample** contains the coordinates of 2 anchors (beads #275 and #324) encompassing a loop of 150kb. In **simulated_data_subsample/Free**, the polymer chain was free (no loop), while the polymer was submitted to loop extrusion in **simulated_data_subsample/Loop**. In simulations with extrusion, the polymer chain was simulated such as it went through 3 different states : i) Open state  (absence of loops) ii) Extruding state where the loop size increases with time (anchor-anchor distance decreases) and iii) closed state corresponding to a stable loop with the two anchors in contact.
+
 In each .txt file, the first three columns correspond to the XYZ coordinates of the anchor, the fourth column indicates the state label (0=Open, 1=Extruding, 2=Closed). Each row corresponds to a simulation timepoint (2991 timepoints in polymers submitted to loop extrusion). The simulation ID is indicated at the end of each .txt file. 
 
 Only 19 samples were provided here. The full dataset is available at : 10.5281/zenodo.7521386.
