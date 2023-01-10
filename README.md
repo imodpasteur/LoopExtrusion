@@ -50,6 +50,4 @@ From the simulated anchor coordinates given in **simulated_data_subsample** dire
 Finally, after simulating anchor-anchor difference distribution with different proportions of Open, Extruding and Closed states (with additive Gaussian noise to simulate localizations errors), the script estimates these proportions by fitting to the distribution our 3-states model.
 
 ### Requirements
-The analyse program has been run with python 3.9
-It needs the following libraries:
-matplotlib, scipy, numpy, pandas
+The analysis script has been run using python 3.9 with the following libraries: matplotlib, scipy, numpy, pandas.
