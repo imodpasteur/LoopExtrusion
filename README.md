@@ -1,11 +1,11 @@
 # LoopExtrusion
 
-A tool to simulate chromatin loop extrusion with LAMMPS and estimate states proportions from simulations (closed vs extrusion vs free)
+A tool to simulate chromatin loop extrusion with LAMMPS and estimate loop state proportions from simulations (closed vs extrusion vs open)
 
 This repository contains three directories:
- - **simulations** used to simulate a polymer.
- - **simulated_data_subsample** contains few polymer simulations with and without loop extrusion.
- - **Anchor-anchor_analysis** used to analyse simulated polymer to estimate states proportions (closed vs extrusion vs free)
+ - **simulations** used to simulate a polymer with or without loop extrusion.
+ - **simulated_data_subsample** contains a few polymer simulations with and without loop extrusion.
+ - **Anchor-anchor_analysis** used to analyze simulated loop anchor coordinates to estimate loop state proportions (closed vs extrusion vs open) from simulated static imaging.
 
 
 ## Simulations
@@ -34,14 +34,15 @@ The resulting .dcd files containing beads coordinates were then imported in Pyth
 
 ## Simulated data
 
-The directory **simulated_data_subsample** contains the coordinates of 2 anchors (275 and 324) encompassing a loop of 150kb. 19 samples with 2991 time points are given. In **simulated_data_subsample/Free**, the polymer chain was free (no loop) whereas loop extrusion is present in **simulated_data_subsample/Loop**. In this last simulations, the polymer chains were simulated such as they switched between 3 states : i) Free state  (absence of loops) ii) Extrusion state where the loop size increases with time (anchor-anchor distance decreases) and iii) closed state corresponding to a stable loop with the two anchors in contact.
+The directory **simulated_data_subsample** contains the coordinates of 2 anchors (beads #275 and #324) encompassing a loop of 150kb. In **simulated_data_subsample/Free**, the polymer chain was free (no loop), while the polymer was submitted to loop extrusion in **simulated_data_subsample/Loop**. In simulations with extrusion, the polymer chain was simulated such as it went through 3 different states : i) Open state  (absence of loops) ii) Extruding state where the loop size increases with time (anchor-anchor distance decreases) and iii) closed state corresponding to a stable loop with the two anchors in contact.
+In each .txt file, the first three columns correspond to the XYZ coordinates of the anchor, the fourth column indicates the state label (0=Open, 1=Extruding, 2=Closed). Each row corresponds to a simulation timepoint (2991 timepoints in polymers submitted to loop extrusion). The simulation ID is indicated at the end of each .txt file. 
 
-Only 19 samples are provided here. Please, contact us for larger dataset.
+Only 19 samples were provided here. The full dataset is available at : 10.5281/zenodo.7521386.
 
 ## Anchor-anchor analysis
 
-The directory **Anchor-anchor_analysis** contains a python script for estimating the proportion of Closed, Extrusion and Free states from simulations of localisations of 2 anchors encompassing a loop in microscopy images.
+The directory **Anchor-anchor_analysis** contains a python script to estimate the proportion of Closed, Extruding and Open states from simulated static microscopy imaging of loop anchors.
 
-From the simulated anchor coordinates given in **simulated_data_subsample** directory, the script first computes the difference distribution of the two anchors. Assuming Normal distributions for Closed and Free states, the script then estimates the standard deviations for these 2 states ( $\sigma_{closed}$ and $\sigma_{free}$ ). None parameter is estimated for Extrusion state since it can be modeled as an integral of Normal distribution with standard deviation varying from $\sigma_{closed}$ to $\sigma_{free}$. We end up with a 3-state model.
+From the simulated anchor coordinates given in **simulated_data_subsample** directory, the script first computes the difference distribution of the two anchors. Assuming Normal distributions for Closed and Open states, the script then estimates the standard deviations for these 2 states ( $\sigma_{closed}$ and $\sigma_{free}$ ). No parameter is estimated for the Extruding state since it can be modeled as an integral of Normal distribution with standard deviation varying from $\sigma_{closed}$ to $\sigma_{free}$. We end up with a 3-state model.
 
-Finally, after simulating anchor-anchor difference distribution with different proportions of Free, Extrusion and Closed states (with additive Gaussian noise to simulate localizations errors), the script estimates these proportions by fitting to the distribution our 3-states model.
+Finally, after simulating anchor-anchor difference distribution with different proportions of Open, Extruding and Closed states (with additive Gaussian noise to simulate localizations errors), the script estimates these proportions by fitting to the distribution our 3-states model.
