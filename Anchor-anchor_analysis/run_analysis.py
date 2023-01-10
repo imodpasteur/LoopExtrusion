@@ -18,14 +18,14 @@ from models import Models
 
 
 #folder of first anchor without loop
-folder_free0='../Anchor-anchor_simulated_data_subsample/Free/Bead275'
+folder_free0='../simulated_data_subsample/Free/Bead275'
 #folder of second anchor without loop
-folder_free1='../Anchor-anchor_simulated_data_subsample/Free/Bead324'
+folder_free1='../simulated_data_subsample/Free/Bead324'
 
 #folder of first anchor with loop
-folder_loop0='../Anchor-anchor_simulated_data_subsample/Loop/Bead275'
+folder_loop0='../simulated_data_subsample/Loop/Bead275'
 #folder of second anchor with loop
-folder_loop1='../Anchor-anchor_simulated_data_subsample/Loop/Bead324'
+folder_loop1='../simulated_data_subsample/Loop/Bead324'
 
 
 show=True
