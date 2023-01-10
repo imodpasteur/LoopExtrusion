@@ -7,6 +7,7 @@ This repository contains three directories:
  - **simulated_data_subsample** contains a few polymer simulations with and without loop extrusion.
  - **Anchor-anchor_analysis** used to analyze simulated loop anchor coordinates to estimate loop state proportions (closed vs extruding vs open) from simulated static imaging.
 
+Licence: MIT
 
 ## Simulations
 
@@ -47,3 +48,8 @@ The directory **Anchor-anchor_analysis** contains a python script to estimate th
 From the simulated anchor coordinates given in **simulated_data_subsample** directory, the script first computes the difference distribution of the two anchors. Assuming Normal distributions for Closed and Open states, the script then estimates the standard deviations for these 2 states ( $\sigma_{closed}$ and $\sigma_{free}$ ). No parameter is estimated for the Extruding state since it can be modeled as an integral of Normal distribution with standard deviation varying from $\sigma_{closed}$ to $\sigma_{free}$. We end up with a 3-state model.
 
 Finally, after simulating anchor-anchor difference distribution with different proportions of Open, Extruding and Closed states (with additive Gaussian noise to simulate localizations errors), the script estimates these proportions by fitting to the distribution our 3-states model.
+
+### Requirements
+The analyse program has been run with python 3.9
+It needs the following libraries:
+matplotlib, scipy, numpy, pandas
