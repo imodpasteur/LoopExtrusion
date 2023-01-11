@@ -88,7 +88,7 @@ extr_data=Utils.transform_data_shiftEndOfExtrusion(extr_data0,extr_data1,.05,60,
 for sigma_x,sigma_y,sigma_z in zip(sigma_X,sigma_Y,sigma_Z):
 
     print('----------------------------------------------------------')
-    print('simulated localization precision :  s(X)=',sigma_x,'  s(Y)=',sigma_y,'  s(Z)=',sigma_z,' nm')
+    print('simulated localization precision :  s(X)=',sigma_x,'  s(Y)=',sigma_y,'  s(Z)=',sigma_z,' um')
     print('----------------------------------------------------------')
 
     #Be careful, here we multiply var by 2 because anchor to anchor distances contains 2 times localization errors
@@ -190,8 +190,8 @@ for sigma_x,sigma_y,sigma_z in zip(sigma_X,sigma_Y,sigma_Z):
 
 
     print('----------------------------------------------------------')
-    print('sigma closed estimated = ',np.sqrt(var_loop),' nm')
-    print('sigma free estimated = ',np.sqrt(var_free),' nm')
+    print('sigma closed estimated = ',np.sqrt(var_loop),' um')
+    print('sigma free estimated = ',np.sqrt(var_free),' um')
     print('----------------------------------------------------------')
 
 
